@@ -1,0 +1,13 @@
+snapshot_date,exchange_id,market,tier,maker,taker
+2026-08-05,binance,spot,vip0,0.001,0.001
+2026-08-05,binance,futures,vip0,0.0002,0.0005
+2026-08-05,bitget,spot,vip0,0.001,0.001
+2026-08-05,bitget,futures,vip0,0.0002,0.0006
+2026-08-05,gate,spot,vip0,0.001,0.001
+2026-08-05,gate,futures,vip0,0.0002,0.0005
+2026-08-05,bybit,spot,vip0,0.001,0.001
+2026-08-05,bybit,futures,vip0,0.0002,0.00055
+2026-08-05,okx,spot,vip0,0.0009,0.0009
+2026-08-05,okx,futures,vip0,0.0002,0.0005
+2026-08-05,backpack,spot,vip0,0.0009,0.0009
+2026-08-05,backpack,futures,vip0,0.0002,0.0005
