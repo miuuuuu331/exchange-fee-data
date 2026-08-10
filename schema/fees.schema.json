@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/miuuuuu331/exchange-fee-data/main/schema/fees.schema.json",
+  "title": "Exchange Fee Snapshot",
+  "type": "object",
+  "required": ["snapshot_date", "tiers_covered", "rate_format", "exchanges"],
+  "additionalProperties": false,
+  "properties": {
+    "snapshot_date": { "type": "string", "format": "date" },
+    "tiers_covered": { "type": "array", "items": { "$ref": "#/$defs/tierName" }, "minItems": 1 },
+    "rate_format":   { "const": "decimal fraction (0.0005 == 0.05%)" },
+    "basis":         { "type": "string" },
+    "source":        { "type": "string", "format": "uri" },
+    "exchanges": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/exchange" }
+    }
+  },
+  "$defs": {
+    "tierName": { "type": "string", "pattern": "^vip[0-9]+$" },
+    "rate": {
+      "description": "Decimal fraction. 0.0005 means 0.05%. Never a percentage, never basis points.",
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 0.05
+    },
+    "tierRates": {
+      "type": "object",
+      "required": ["maker", "taker"],
+      "additionalProperties": false,
+      "properties": {
+        "maker": { "$ref": "#/$defs/rate" },
+        "taker": { "$ref": "#/$defs/rate" }
+      }
+    },
+    "market": {
+      "type": ["object", "null"],
+      "minProperties": 1,
+      "propertyNames": { "$ref": "#/$defs/tierName" },
+      "additionalProperties": { "$ref": "#/$defs/tierRates" }
+    },
+    "exchange": {
+      "type": "object",
+      "required": ["id", "name", "source_url", "verified_at", "spot", "futures"],
+      "additionalProperties": false,
+      "properties": {
+        "id":          { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "name":        { "type": "string", "minLength": 1 },
+        "source_url":  { "type": "string", "format": "uri" },
+        "verified_at": { "type": "string", "format": "date" },
+        "spot":        { "$ref": "#/$defs/market" },
+        "futures":     { "$ref": "#/$defs/market" },
+        "notes":       { "type": "string" }
+      }
+    }
+  }
+}
