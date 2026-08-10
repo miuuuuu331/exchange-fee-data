@@ -1,0 +1,139 @@
+{
+  "snapshot_date": "2026-08-05",
+  "tiers_covered": [
+    "vip0"
+  ],
+  "rate_format": "decimal fraction (0.0005 == 0.05%)",
+  "basis": "VIP0 published maker/taker. Where a venue publishes a single blended spot rate, maker and taker carry the same value; see notes.",
+  "source": "https://railsdesk.com/",
+  "exchanges": [
+    {
+      "id": "binance",
+      "name": "Binance",
+      "source_url": "https://www.binance.com/en/fee/schedule",
+      "verified_at": "2026-08-05",
+      "spot": {
+        "vip0": {
+          "maker": 0.001,
+          "taker": 0.001
+        }
+      },
+      "futures": {
+        "vip0": {
+          "maker": 0.0002,
+          "taker": 0.0005
+        }
+      },
+      "notes": "Holding BNB applies a 25% discount to spot fees; not reflected in the rate fields."
+    },
+    {
+      "id": "bitget",
+      "name": "Bitget",
+      "source_url": "https://www.bitget.com/fee-rate",
+      "verified_at": "2026-08-05",
+      "spot": {
+        "vip0": {
+          "maker": 0.001,
+          "taker": 0.001
+        }
+      },
+      "futures": {
+        "vip0": {
+          "maker": 0.0002,
+          "taker": 0.0006
+        }
+      },
+      "notes": "Highest futures taker of the venues tracked here."
+    },
+    {
+      "id": "gate",
+      "name": "Gate.io",
+      "source_url": "https://www.gate.io/fee",
+      "verified_at": "2026-08-05",
+      "spot": {
+        "vip0": {
+          "maker": 0.001,
+          "taker": 0.001
+        }
+      },
+      "futures": {
+        "vip0": {
+          "maker": 0.0002,
+          "taker": 0.0005
+        }
+      },
+      "notes": "GT holdings unlock additional spot discounts; not reflected in the rate fields."
+    },
+    {
+      "id": "bybit",
+      "name": "Bybit",
+      "source_url": "https://www.bybit.com/en/help-center/article/Trading-Fee-Structure",
+      "verified_at": "2026-08-05",
+      "spot": {
+        "vip0": {
+          "maker": 0.001,
+          "taker": 0.001
+        }
+      },
+      "futures": {
+        "vip0": {
+          "maker": 0.0002,
+          "taker": 0.00055
+        }
+      },
+      "notes": "Announced a VIP1+ futures taker cut to 0.05%; VIP0 unchanged as of this snapshot."
+    },
+    {
+      "id": "okx",
+      "name": "OKX",
+      "source_url": "https://www.okx.com/fees",
+      "verified_at": "2026-08-05",
+      "spot": {
+        "vip0": {
+          "maker": 0.0009,
+          "taker": 0.0009
+        }
+      },
+      "futures": {
+        "vip0": {
+          "maker": 0.0002,
+          "taker": 0.0005
+        }
+      },
+      "notes": "Lowest published VIP0 spot rate of the venues tracked here."
+    },
+    {
+      "id": "backpack",
+      "name": "Backpack",
+      "source_url": "https://backpack.exchange/fees",
+      "verified_at": "2026-08-05",
+      "spot": {
+        "vip0": {
+          "maker": 0.0009,
+          "taker": 0.0009
+        }
+      },
+      "futures": {
+        "vip0": {
+          "maker": 0.0002,
+          "taker": 0.0005
+        }
+      },
+      "notes": "Solana-native venue."
+    },
+    {
+      "id": "polymarket",
+      "name": "Polymarket",
+      "source_url": "https://docs.polymarket.com/",
+      "verified_at": "2026-08-05",
+      "spot": {
+        "vip0": {
+          "maker": null,
+          "taker": null
+        }
+      },
+      "futures": null,
+      "notes": "Prediction market. Fees are charged on winnings and vary by market, roughly 0.75%-1.8%; not expressible as a flat maker/taker rate."
+    }
+  ]
+}
